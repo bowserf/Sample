@@ -2,5 +2,6 @@
 <resources>
 
     <dimen name="default_dimen">16dp</dimen>
+    <dimen name="default_dimen_2">32dp</dimen>
 
 </resources>
