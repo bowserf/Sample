@@ -1,0 +1,19 @@
+<resources>
+
+    <string name="app_name">Test-Notification</string>
+
+    <string name="low_importance_channel_name">Channel name low importance</string>
+    <string name="low_importance_channel_description">Channel description low importance</string>
+
+    <string name="low_importance_notif_title">Low importance notif title</string>
+    <string name="low_importance_notif_content">Low importance notif content</string>
+
+    <string name="high_importance_channel_name">Channel name high importance</string>
+    <string name="high_importance_channel_description">Channel description high importance</string>
+
+    <string name="high_importance_notif_title">High importance notif title</string>
+    <string name="high_importance_notif_content">High importance notif content</string>
+
+    <string name="channel_group_name">Channel group name</string>
+
+</resources>
