@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shortcut
+        android:shortcutId="shortcut_1"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/shortcut_short_label_1"
+        android:shortcutLongLabel="@string/shortcut_long_label_1"
+        android:shortcutDisabledMessage="@string/disabled_message_1">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="fr.bowserf.testshortcut"
+            android:targetClass="fr.bowserf.testshortcut.LaunchFromShortcutActivity" />
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="fr.bowserf.testshortcut"
+            android:targetClass="fr.bowserf.testshortcut.SecondLaunchFromShortcutActivity" />
+        <!-- When multiples intents are defined, the last intent is launched first. If user click on
+        back button, the second last intent in launch until there is no activity to start in the
+        task -->
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="shortcut_2"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/shortcut_short_label_2"
+        android:shortcutLongLabel="@string/shortcut_long_label_2"
+        android:shortcutDisabledMessage="@string/disabled_message_2">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="fr.bowserf.testshortcut"
+            android:targetClass="fr.bowserf.testshortcut.LaunchFromShortcutActivity" />
+        <categories android:name="android.shortcut.conversation" /> <!-- it's the only existing category for now -->
+
+    </shortcut>
+
+</shortcuts>

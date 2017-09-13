@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">Test-Shortcut</string>
+
+    <string name="shortcut_short_label_1">Short : 2 activities</string>
+    <string name="shortcut_long_label_1">Long : 2 activities</string>
+    <string name="disabled_message_1">Disable : 2 activities</string>
+
+    <string name="shortcut_short_label_2">Short label</string>
+    <string name="shortcut_long_label_2">Long label</string>
+    <string name="disabled_message_2">Disable label</string>
+
+</resources>
