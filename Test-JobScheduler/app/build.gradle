@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "fr.bowserf.test_jobscheduler"
-        minSdkVersion 21
+        minSdkVersion 14
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -36,5 +36,8 @@ dependencies {
     // Support
     compile 'com.android.support:appcompat-v7:26.0.2'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    // Other
+    compile 'com.firebase:firebase-jobdispatcher:0.8.1'
 
 }

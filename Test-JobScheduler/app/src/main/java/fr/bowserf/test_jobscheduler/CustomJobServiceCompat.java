@@ -1,21 +1,19 @@
 package fr.bowserf.test_jobscheduler;
 
 
-import android.app.job.JobParameters;
-import android.app.job.JobService;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.widget.Toast;
 
-@RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-public class CustomJobService extends JobService {
+import com.firebase.jobdispatcher.JobParameters;
+import com.firebase.jobdispatcher.JobService;
+
+public class CustomJobServiceCompat extends JobService {
 
     @SuppressWarnings("unused")
     private static final String TAG = "CustomJobService";
 
     @Override
     public boolean onStartJob(JobParameters jobParameters) {
-        Toast.makeText(this, "Do some work !", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Do some compat work !", Toast.LENGTH_SHORT).show();
 
         jobFinished(jobParameters, true); // notify that the job is finished
                                           // second parameter is to reschedule the job

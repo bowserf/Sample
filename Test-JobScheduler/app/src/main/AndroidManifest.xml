@@ -25,6 +25,12 @@
             android:name=".CustomJobService"
             android:permission="android.permission.BIND_JOB_SERVICE"/>
 
+        <service android:name=".CustomJobServiceCompat">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>
