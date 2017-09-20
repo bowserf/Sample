@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">[Test] Deep link</string>
+    <string name="title_activity_available_by_deeplink">AvailableByDeeplinkActivity</string>
+</resources>
