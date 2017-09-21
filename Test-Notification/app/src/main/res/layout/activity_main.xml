@@ -12,10 +12,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create notification low importance"
-        app:layout_constraintBottom_toTopOf="@+id/btn_create_notif_high_importance"
+        app:layout_constraintBottom_toTopOf="@+id/btn_create_notif_default_importance"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btn_create_notif_default_importance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create notification default importance"
+        app:layout_constraintBottom_toTopOf="@+id/btn_create_notif_high_importance"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_create_notif_low_importance"
         app:layout_constraintVertical_chainStyle="packed"
         android:layout_marginBottom="16dp"/>
 
@@ -27,6 +39,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_create_notif_low_importance"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn_create_notif_default_importance"/>
 
 </android.support.constraint.ConstraintLayout>

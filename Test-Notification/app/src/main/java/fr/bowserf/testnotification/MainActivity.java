@@ -20,6 +20,13 @@ public class MainActivity extends AppCompatActivity {
             notificationManagerHelper.displayLowImportanceNotif(title, content);
         });
 
+        Button btnCreateNotifDefaultImportance = findViewById(R.id.btn_create_notif_default_importance);
+        btnCreateNotifDefaultImportance.setOnClickListener(view -> {
+            String title = getResources().getString(R.string.default_importance_notif_title);
+            String content = getResources().getString(R.string.default_importance_notif_content);
+            notificationManagerHelper.displayDefaultImportanceNotif(title, content);
+        });
+
         Button btnCreateNotifHighImportance = findViewById(R.id.btn_create_notif_high_importance);
         btnCreateNotifHighImportance.setOnClickListener(view -> {
             String title = getResources().getString(R.string.high_importance_notif_title);

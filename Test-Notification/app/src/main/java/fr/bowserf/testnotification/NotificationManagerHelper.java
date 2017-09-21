@@ -16,12 +16,14 @@ public class NotificationManagerHelper {
     private static final String TAG = "NotificationManagerHelp";
 
     private static final String NOTIF_CHANNEL_HIGH_IMPORTANCE = "NotificationManagerHelper.NOTIF_CHANNEL_HIGH_IMPORTANCE";
+    private static final String NOTIF_CHANNEL_DEFAULT_IMPORTANCE = "NotificationManagerHelper.NOTIF_CHANNEL_DEFAULT_IMPORTANCE";
     private static final String NOTIF_CHANNEL_LOW_IMPORTANCE = "NotificationManagerHelper.NOTIF_CHANNEL_LOW_IMPORTANCE";
 
     private static final String CHANNEL_GROUP_ID = "NotificationManagerHelper.CHANNEL_GROUP_NAME";
 
     private static final int LOW_NOTIF_ID = 6405;
-    private static final int HIGH_NOTIF_ID = 6406;
+    private static final int DEFAULT_NOTIF_ID = 6406;
+    private static final int HIGH_NOTIF_ID = 6407;
 
     private NotificationManager mNotificationManager;
 
@@ -37,14 +39,12 @@ public class NotificationManagerHelper {
             // we need to delete the application and install it again or remove data.
 
             String channelNameLow = context.getResources().getString(R.string.low_importance_channel_name);
-            String channelDescriptionLow = context.getResources().getString(R.string.low_importance_channel_name);
+            String channelDescriptionLow = context.getResources().getString(R.string.low_importance_channel_description);
             NotificationChannel notifChannelLowImportance = new NotificationChannel(
                     NOTIF_CHANNEL_LOW_IMPORTANCE,
                     channelNameLow,
                     NotificationManager.IMPORTANCE_LOW); // won't vibrate or light with IMPORTANCE_LOW
             notifChannelLowImportance.setDescription(channelDescriptionLow);
-            notifChannelLowImportance.setLightColor(Color.RED); // need to enable lights to show the blink
-            notifChannelLowImportance.enableLights(true);
 
             // we must call setGroup() before submit the chanel to the notification manager
             String groupName = context.getResources().getString(R.string.channel_group_name);
@@ -53,8 +53,20 @@ public class NotificationManagerHelper {
 
             mNotificationManager.createNotificationChannel(notifChannelLowImportance);
 
+            String channelNameDefault = context.getResources().getString(R.string.default_importance_channel_name);
+            String channelDescriptionDefault = context.getResources().getString(R.string.default_importance_channel_description);
+            NotificationChannel notifChannelDefaultImportance = new NotificationChannel(
+                    NOTIF_CHANNEL_DEFAULT_IMPORTANCE,
+                    channelNameDefault,
+                    NotificationManager.IMPORTANCE_DEFAULT);
+            notifChannelDefaultImportance.setDescription(channelDescriptionDefault);
+            notifChannelDefaultImportance.setLightColor(Color.RED);
+            notifChannelDefaultImportance.enableLights(true);
+
+            mNotificationManager.createNotificationChannel(notifChannelDefaultImportance);
+
             String channelNameHigh = context.getResources().getString(R.string.high_importance_channel_name);
-            String channelDescriptionHigh = context.getResources().getString(R.string.high_importance_channel_name);
+            String channelDescriptionHigh = context.getResources().getString(R.string.high_importance_channel_description);
             NotificationChannel notifChannelHighImportance = new NotificationChannel(
                     NOTIF_CHANNEL_HIGH_IMPORTANCE,
                     channelNameHigh,
@@ -62,8 +74,9 @@ public class NotificationManagerHelper {
             notifChannelHighImportance.setLightColor(Color.BLUE); // need to enable lights to show the blink
             notifChannelHighImportance.enableLights(true);
             notifChannelHighImportance.setVibrationPattern(new long[]{500, 500, 200, 200, 500, 500}); // change the default pattern of the vibration
+            notifChannelHighImportance.enableVibration(true);
             notifChannelHighImportance.setDescription(channelDescriptionHigh);
-            //notifChannelHighImportance.setShowBadge(true); // enable by default
+            notifChannelHighImportance.setShowBadge(false); // enable by default
 
             // it's the last notification which decides of the color of the LED
 
@@ -80,6 +93,17 @@ public class NotificationManagerHelper {
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .build();
         mNotificationManager.notify(LOW_NOTIF_ID, notif);
+    }
+
+    public void displayDefaultImportanceNotif(String title, String body){
+        Notification notif = new NotificationCompat.Builder(mContext, NOTIF_CHANNEL_DEFAULT_IMPORTANCE)
+                .setContentTitle(title)
+                .setContentText(body)
+                .setLocalOnly(true) // this notification will only be displayed on this device and not a remote one
+                .setAutoCancel(true) // notification is automatically canceled when user click on the notification
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .build();
+        mNotificationManager.notify(DEFAULT_NOTIF_ID, notif);
     }
 
     public void displayHighImportanceNotif(String title, String body){

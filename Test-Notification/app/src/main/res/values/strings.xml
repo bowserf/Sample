@@ -8,6 +8,12 @@
     <string name="low_importance_notif_title">Low importance notif title</string>
     <string name="low_importance_notif_content">Low importance notif content</string>
 
+    <string name="default_importance_channel_name">Channel name default importance</string>
+    <string name="default_importance_channel_description">Channel description default importance</string>
+
+    <string name="default_importance_notif_title">Default importance notif title</string>
+    <string name="default_importance_notif_content">Default importance notif content</string>
+
     <string name="high_importance_channel_name">Channel name high importance</string>
     <string name="high_importance_channel_description">Channel description high importance</string>
 
