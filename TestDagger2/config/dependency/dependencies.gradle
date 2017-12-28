@@ -1,0 +1,18 @@
+//Dependencies file to be used in the core module gradle
+
+//Android
+def dagger2Version = "2.14.1"
+
+
+rootProject.ext.dependencies = [
+
+        // Other
+        dagger2                             : "com.google.dagger:dagger:$dagger2Version",
+        annotationProcessorDagger2          : "com.google.dagger:dagger-compiler:$dagger2Version",
+        dagger2Android                      : "com.google.dagger:dagger-android:$dagger2Version",
+        dagger2AndroidSupport               : "com.google.dagger:dagger-android-support:$dagger2Version",
+        annotationProcessorDagger2Android   : "com.google.dagger:dagger-android-processor:$dagger2Version"
+
+]
+
+
